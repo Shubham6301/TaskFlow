@@ -23,7 +23,7 @@ app.get('/health', (req, res) => res.json({ status: 'ok', time: new Date() }));
 
 // Serve frontend in production
 if (process.env.NODE_ENV === 'production') {
-  const distPath = path.join(__dirname, '..', '..', '..', 'frontend', 'dist');
+const distPath = path.join('/app', 'frontend', 'dist');
   console.log('Serving frontend from:', distPath);
   app.use(express.static(distPath));
   app.get('*', (req, res) => {
