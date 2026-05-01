@@ -1,0 +1,48 @@
+.team-page { max-width: 1000px; }
+.page-header { margin-bottom: 24px; }
+.page-header h1 { font-size: 1.75rem; letter-spacing: -0.02em; }
+
+.team-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 14px; margin-bottom: 24px;
+}
+.team-stat { text-align: center; padding: 20px; }
+.team-stat-value { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; letter-spacing: -0.03em; }
+.team-stat-label { font-size: 0.8125rem; color: var(--text-muted); margin-top: 4px; }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.team-card {
+  display: flex; flex-direction: column; gap: 12px;
+  align-items: center; text-align: center; padding: 24px 16px;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.team-card:hover { border-color: var(--border-light); transform: translateY(-2px); }
+
+.team-card-top { position: relative; }
+.you-badge {
+  position: absolute; top: -4px; right: -8px;
+  background: var(--accent); color: #fff;
+  font-size: 0.625rem; font-weight: 700; padding: 2px 6px;
+  border-radius: 10px; letter-spacing: 0.05em; text-transform: uppercase;
+}
+
+.team-card-info { width: 100%; }
+.team-name { font-weight: 600; font-size: 0.9375rem; margin-bottom: 2px; }
+.team-email { word-break: break-all; }
+
+.team-card-footer { margin-top: auto; }
+.role-select {
+  appearance: none; cursor: pointer; border: none;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.02em;
+  background: transparent; outline: none; text-align: center;
+}
+
+@media (max-width: 600px) {
+  .team-stats { grid-template-columns: 1fr 1fr 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+}

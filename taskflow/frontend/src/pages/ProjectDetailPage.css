@@ -1,0 +1,74 @@
+.project-detail { max-width: 1100px; }
+
+.back-link {
+  color: var(--text-muted); font-size: 0.875rem;
+  text-decoration: none; display: inline-block; margin-bottom: 16px;
+  transition: color 0.15s;
+}
+.back-link:hover { color: var(--text); }
+
+.project-detail-header {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px; margin-bottom: 24px;
+}
+
+.project-title-row {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 8px;
+}
+.project-title-row h1 { font-size: 1.5rem; letter-spacing: -0.02em; }
+
+.project-color-indicator {
+  width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0;
+}
+
+.project-stats-row {
+  display: flex; gap: 16px; margin-top: 8px;
+}
+
+.project-body {
+  display: grid; grid-template-columns: 1fr 280px; gap: 20px;
+}
+
+.section-header {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;
+}
+.section-header h2 { font-size: 1.125rem; margin-right: auto; }
+
+.filter-tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.filter-tab {
+  padding: 4px 10px; border-radius: 20px; font-size: 0.75rem;
+  font-weight: 500; background: transparent; border: 1px solid var(--border);
+  color: var(--text-muted); cursor: pointer; transition: all 0.15s;
+  text-transform: capitalize;
+}
+.filter-tab:hover { color: var(--text); border-color: var(--border-light); }
+.filter-tab.active { background: var(--accent-glow); color: var(--accent); border-color: rgba(124,106,248,0.3); }
+
+.task-cards { display: flex; flex-direction: column; gap: 10px; }
+
+.task-card { padding: 16px; }
+.task-card-header { display: flex; align-items: center; margin-bottom: 8px; }
+.task-title { font-weight: 600; font-size: 0.9375rem; margin-bottom: 4px; }
+
+.task-card-footer {
+  display: flex; align-items: center; gap: 10px;
+  margin-top: 12px; flex-wrap: wrap;
+}
+
+.status-select {
+  appearance: none; cursor: pointer; border: none;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.02em;
+  text-transform: capitalize; background: transparent; outline: none;
+}
+
+.members-section { }
+.members-list { display: flex; flex-direction: column; gap: 8px; }
+.member-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px; background: var(--bg-card);
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+}
+
+@media (max-width: 768px) {
+  .project-body { grid-template-columns: 1fr; }
+}
