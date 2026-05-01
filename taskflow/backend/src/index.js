@@ -23,9 +23,11 @@ app.get('/health', (req, res) => res.json({ status: 'ok', time: new Date() }));
 
 // Serve frontend in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../../frontend/dist')));
+  const distPath = path.join(__dirname, '..', '..', '..', 'frontend', 'dist');
+  console.log('Serving frontend from:', distPath);
+  app.use(express.static(distPath));
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../frontend/dist/index.html'));
+    res.sendFile(path.join(distPath, 'index.html'));
   });
 }
 
@@ -35,10 +37,10 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal server error' });
 });
 
-sequelize.sync({ alter: process.env.NODE_ENV !== 'production' })
+sequelize.sync({ alter: false })
   .then(() => {
     console.log('Database synced');
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
       console.log(`TaskFlow server running on port ${PORT}`);
     });
   })
